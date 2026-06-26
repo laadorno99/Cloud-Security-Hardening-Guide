@@ -19,6 +19,6 @@ This project provides a step-by-step technical checklist to secure cloud environ
 - [ ] Add Azure-specific hardening steps.
 - [ ] Create automated security scripts (Python).
 - [ ] Include a section on incident response.
-
+Check aws-security-policy.json for a practical implementation of the Least Privilege principle.
 ---
 *Maintained by Lara Adorno | Cybersecurity Student*
