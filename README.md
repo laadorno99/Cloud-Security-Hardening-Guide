@@ -14,11 +14,14 @@ This project provides a step-by-step technical checklist to secure cloud environ
 2. **Disable Root User Access:** Create an IAM user for daily tasks.
 3. **Use Security Groups:** Restrict inbound/outbound traffic to specific IPs only.
 
+## Technical Gotchas & Lessons Learned
+
+- **The IAM Lockout Risk:** When applying the `BlockAllExceptMFA` policy, always verify that your current administrative IAM User already has an active MFA device configured. Applying a blanket "Deny" policy without verifying this first can permanently lock you out of your own AWS console session.
+  
 ## Roadmap
 
 - [ ] Add Azure-specific hardening steps.
 - [ ] Create automated security scripts (Python).
 - [ ] Include a section on incident response.
-Check aws-security-policy.json for a practical implementation of the Least Privilege principle.
 ---
 *Maintained by Lara Adorno | Cybersecurity Student*
