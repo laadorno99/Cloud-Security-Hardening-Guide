@@ -28,4 +28,3 @@ This project provides a step-by-step technical checklist to secure cloud environ
 *Check `aws-security-policy.json` in the main directory for a practical implementation of the Least Privilege principle.*
 
 *Maintained by Lara Adorno | Cybersecurity Student*
-*Maintained by Lara Adorno | Cybersecurity Student*
