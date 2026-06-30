@@ -17,7 +17,7 @@ This project provides a step-by-step technical checklist to secure cloud environ
 ## Technical Gotchas & Lessons Learned
 
 - **The IAM Lockout Risk:** When applying the `BlockAllExceptMFA` policy, always verify that your current administrative IAM User already has an active MFA device configured. Applying a blanket "Deny" policy without verifying this first can permanently lock you out of your own AWS console session.
-- - **The Password Edge Case:** I initially forgot to include `iam:ChangePassword` in the policy exceptions. Without it, a user with an expired password and no MFA configured would be completely locked out — unable to even change their password to then set up MFA. This taught me to think through edge cases, not just the "happy path".
+- **The Password Edge Case:** I initially forgot to include `iam:ChangePassword` in the policy exceptions. Without it, a user with an expired password and no MFA configured would be completely locked out — unable to even change their password to then set up MFA. This taught me to think through edge cases, not just the "happy path".
   
 ## Roadmap
 
