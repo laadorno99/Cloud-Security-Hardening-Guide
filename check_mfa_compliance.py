@@ -1,8 +1,16 @@
 import boto3
+from botocore.exceptions import NoCredentialsError, ClientError
 
 def check_mfa_compliance():
-    iam = boto3.client('iam')
-    users = iam.list_users()['Users']
+    try:
+        iam = boto3.client('iam')
+        users = iam.list_users()['Users']
+    except NoCredentialsError:
+        print("❌ AWS credentials not found. Run 'aws configure' first.")
+        return
+    except ClientError as e:
+        print(f"❌ AWS error: {e}")
+        return
 
     print(f"Checking {len(users)} IAM users for MFA compliance...\n")
 
