@@ -22,10 +22,22 @@ This project provides a step-by-step technical checklist to secure cloud environ
 ## Roadmap
 
 - [ ] Add Azure-specific hardening steps.
-- [ ] Create automated security scripts (Python).
+- [x] Create automated security scripts (Python).
 - [ ] Include a section on incident response.
 
 ---
 *Check `aws-security-policy.json` in the main directory for a practical implementation of the Least Privilege principle.*
+
+## Automated MFA Compliance Checker
+
+`check_mfa_compliance.py` is a Python script that connects to AWS via boto3 and audits all IAM users, flagging any account that does not have MFA enabled. This automates a check that would otherwise have to be done manually in the AWS console.
+
+### How to run
+
+1. Install dependencies: `pip install boto3`
+2. Configure your AWS credentials: `aws configure`
+3. Run the script: `python check_mfa_compliance.py`
+
+The script requires the IAM permissions `iam:ListUsers` and `iam:ListMFADevices`.
 
 *Maintained by Lara Adorno | Cybersecurity Student*
